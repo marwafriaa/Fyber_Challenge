@@ -6,14 +6,13 @@ import Utils._
 
 
 /**
-  * Created by mFRIAA on 12/07/17.
+  * Created by m.friaa on 12/07/17.
   */
 object Launcher extends App {
 
 
   val LOGGER = Logger.getLogger(this.getClass.toString)
 
-  val formatter = new DecimalFormat("#.###")
   // Verify Parameters number
   if (args.length < 1) {
     LOGGER.log(Level.SEVERE,
@@ -29,9 +28,9 @@ object Launcher extends App {
   }
   val filename = args(0)
   //Extract Lines from File
-  val raws = Source.fromFile(filename).getLines.toList
+  val rows = Source.fromFile(filename).getLines.toList
   // Map input Data
-  val splittedData = raws.map(line => {
+  val splittedData = rows.map(line => {
     mapLine(line)
   })
 
