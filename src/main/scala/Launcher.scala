@@ -1,4 +1,4 @@
-import java.text.DecimalFormat
+
 import java.util.logging.{Level, Logger}
 
 import scala.io.Source
@@ -30,9 +30,7 @@ object Launcher extends App {
   //Extract Lines from File
   val rows = Source.fromFile(filename).getLines.toList
   // Map input Data
-  val splittedData = rows.map(line => {
-    mapLine(line)
-  })
+  val splittedData = rows.map(line => mapLine(line))
 
   //Build results
   val finalResult = splittedData.map(row => buildResult(row))
