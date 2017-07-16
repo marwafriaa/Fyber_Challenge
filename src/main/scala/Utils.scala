@@ -64,8 +64,10 @@ object Utils {
     }
     //Set the number of measurements in the window to the number of previous rows matching the criteria
     N = previousRows.length
+    //Change Double Format
+    RS = ((RS * 100000).round /100000.toDouble)
     // Return Final Results
-    (row._1, row._2,N, ((RS * 100000).round /100000.toDouble), MaxV, MinV)
+    (row._1, row._2,N, RS, MaxV, MinV)
 
   }
 
