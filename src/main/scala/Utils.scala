@@ -33,7 +33,7 @@ object Utils {
         |------------------------------------------------""".stripMargin)
     result.foreach(row => println(row._1 + " " + "%.5f".format(row._2) +
       " " + row._3 + " " + row._4 +
-      " " + row._5 + " " + row._6))
+      " " + "%.5f".format(row._5) + " " + "%.5f".format(row._6)))
 
   }
 
@@ -65,7 +65,7 @@ object Utils {
     //Set the number of measurements in the window to the number of previous rows matching the criteria
     N = previousRows.length
     // Return Final Results
-    (row._1, row._2,N,"%.5f".format(RS).toDouble, "%.5f".format(MaxV).toDouble, "%.5f".format( MinV).toDouble)
+    (row._1, row._2,N, ((RS * 100000).round /100000.toDouble), MaxV, MinV)
 
   }
 
